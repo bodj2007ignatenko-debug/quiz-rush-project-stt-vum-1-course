@@ -1,3 +1,4 @@
+<!-- экран 1 пишем количество игроков и делаем кнопку "Next" -->
 <div id="screen-1"> 
 <h1>Quiz Rush</h1>
 <p>Welcome to Quiz Rush!</p>
@@ -13,16 +14,56 @@
 </div> 
 </div> 
 
-
+<!-- экран 2 пишем темы для викторины и количество вопросов на игрока -->
 <div id="screen-2">
     <h2>Select Quiz Settings</h2>
     <p>Select the category:</p>
     <select id="category-select">
-        <option value="general">General Knowledge</option>
-        <option value="science">Science</option>
-        <option value="history">History</option>
-        <option value="sports">Sports</option>
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="javascript">JavaScript</option>
+    <option value="mixed">Mixed</option>
     </select>
+    <p>Select number of questions per player:</p>
+    <select id="number-of-questions">   
+        <option value="3" selected> 3 Questions</option>
+        <option value="4"> 4 Questions</option>
+        <option value="5"> 5 Questions</option>
+    </select>
+    <button id="previous-btn">Previous</button>
     <button id="start-quiz-btn" >Start Quiz</button>
 
+</div>
+
+<!-- экран 3 пишем вопросы и варианты ответов, также таймер и кнопку "Submit" и таблицу результатов -->
+
+
+<div id="screen-3">
+    <h3 id="active-player">It's <span id="player-name">Player 1</span>'s turn</h3> 
+    <p id="timer"> Time left: <span id="time-left">15</span>s</p>
+    <h2 id="question-text">What is the capital of France?</h2>
+    <div id="answer-container">
+        <button class="answer-btn">A. Berlin</button>
+        <button class="answer-btn">B. Madrid</button>
+        <button class="answer-btn">C. Paris</button>
+        <button class="answer-btn">D. Rome</button>
+    </div>
+    <button id="submit-btn" disabled>Submit</button>
+</div>
+
+<div id="screen-4">
+    <h2>Quiz Results</h2>
+    <table id="results-table">
+        <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Player 1</td>
+            <td>10</td>
+        </tr>
+    </table>
+    <button id="restart-btn">Restart Quiz</button>
 </div>
