@@ -1,16 +1,26 @@
-<!-- экран 1 пишем количество игроков и делаем кнопку "Next" -->
-<div id="screen-1"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- экран 1 пишем количество игроков и делаем кнопку "Next" -->
+
+    <div id="screen-1"> 
 <h1>Quiz Rush</h1>
 <p>Welcome to Quiz Rush!</p>
 <p>Select number of players:</p>
 <div class="player-numbers">
-<button>1 Player</button>
-<button>2 Players</button>
-<button>3 Players</button>
-<button>4 Players</button>
+<button id="btn-player1">1 Player</button>
+<button id="btn-player2">2 Players</button>
+<button id="btn-player3">3 Players</button>
+<button id="btn-player4">4 Players</button>
 </div>
 <div>
-<button class="next-button">Next</button>
+<button class="next-button" id="next-btn">Next</button>
 </div> 
 </div> 
 
@@ -67,3 +77,7 @@
     </table>
     <button id="restart-btn">Restart Quiz</button>
 </div>
+<script src="script.js"></script>
+</body>
+<!-- Подключаем скрипт -->
+ 

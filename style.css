@@ -1,0 +1,18 @@
+#screen-2,
+#screen-3,
+#screen-4 { 
+    display: none;
+}
+
+body {
+    text-align: center;
+
+    background-color: #C5A880;
+}
+button { background-color: #C5A880;
+padding: 15px 30px; 
+font-size: 18px;
+}
+button:hover {
+    background-color: red;
+}
