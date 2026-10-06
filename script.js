@@ -58,3 +58,96 @@ startquizButton.addEventListener('click', function() {
     screen2.style.display = 'none';
     screen3.style.display = 'block';
 });
+
+let question = [
+    {
+        question: "What does the a tag define in HTML?",
+        category: "html",
+        answers: ["A hyperlink", "A paragraph", "An image", "A section"],
+        correct: 0
+    },
+    {
+        question: "Which tag is used to create an ordered list?",
+        category: "html",
+        answers: ["<ul>", "<ol>", "<li>", "<dl>"],
+        correct: 1
+    },
+    {
+        question: "Which HTML attribute is used to provide an alternative text for an image?",
+        category: "html",
+        answers: ["title", "src", "alt", "href"],
+        correct: 2
+    },
+    {
+        question: "What is the correct HTML element for the largest heading?",
+        category: "html",
+        answers: ["<head>", "<h6>", "<heading>", "<h1>"],
+        correct: 3 
+    },
+    {
+        question: "Which tag is used to define an input field within a form?",
+        category: "html",
+        answers: ["<input>", "<form>", "<textarea>", "<button>"],
+        correct: 0
+    },
+    {
+        question: "Which CSS property is used to change the text color?",
+        category: "css",
+        answers: ["font-color", "text-color", "color", "background-color"],
+        correct: 2
+    },
+    {
+        question: "How do you select an element with id header in CSS?",
+        category: "css",
+        answers: [".header", "#header", "header", "*header"],
+        correct: 1
+    },
+    {
+        question: "Which CSS property controls the size of text?",
+        category: "css",
+        answers: ["font-style", "text-size", "font-size", "text-style"],
+        correct: 2  
+    },
+    {
+        question: "What does the box model property padding do?",
+        category: "css",
+        answers: ["Space outside border", "Space inside border", "Border thickness", "Element width"],
+        correct: 1
+    },
+    {
+        question: "Which value of display makes block elements sit horizontally?",
+        category: "css",
+        answers: ["block", "inline-block", "none", "hidden"],
+        correct: 1
+    },
+    {
+        question: "Which keyword is used to declare a variable that cannot be reassigned?",
+        category: "javascript",
+        answers: ["var", "let", "const", "static"],
+        correct: 2
+    },
+    {
+        question: "What will typeof empty array return in JavaScript?",
+        category: "javascript",
+        answers: ["array", "object", "null", "undefined"],
+        correct: 1
+    },
+    {
+        question: "Which method adds one or more elements to the end of an array?",
+        category: "javascript",
+        answers: ["push()", "pop()", "shift()", "unshift()"],
+        correct: 0
+    },
+    {
+        question: "How do you write a strict equality check in JavaScript?",
+        category: "javascript",
+        answers: ["=", "==", "===", "!=="],
+        correct: 2
+    },
+    {
+        question: "Which built-in function is used to print messages to the browser console?",
+        category: "javascript",
+        answers: ["print()", "console.log()", "alert()", "log.write()"],
+        correct: 1
+    }
+]
