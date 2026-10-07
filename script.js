@@ -1,5 +1,5 @@
 let gameData = { 
-    playersCount: 0,
+    playersCount: 1,
     topic: '',
     questionsCount: 3 
 };
@@ -9,21 +9,38 @@ let playerButtons = [
     document.getElementById('btn-player3'),
     document.getElementById('btn-player4')
 ];
+playerButtons[0].style.backgroundColor = "lightgreen";
 
 playerButtons[0].addEventListener('click', function(){
     gameData.playersCount = 1;
+    for (let i = 0; i < playerButtons.length; i++) {
+    playerButtons[i].style.backgroundColor = "";
+}
+playerButtons[0].style.backgroundColor = "lightgreen";
     console.log(gameData);
 }) 
 playerButtons[1].addEventListener('click', function(){
     gameData.playersCount = 2;
+    for (let i = 0; i < playerButtons.length; i++) {
+    playerButtons[i].style.backgroundColor = "";
+}
+playerButtons[1].style.backgroundColor = "lightgreen";
     console.log(gameData);
 })
 playerButtons[2].addEventListener('click', function(){
     gameData.playersCount = 3;
+    for (let i = 0; i < playerButtons.length; i++) {
+    playerButtons[i].style.backgroundColor = "";
+}
+playerButtons[2].style.backgroundColor = "lightgreen";
     console.log(gameData);
 })
 playerButtons[3].addEventListener('click', function(){
     gameData.playersCount = 4;
+    for (let i = 0; i < playerButtons.length; i++) {
+    playerButtons[i].style.backgroundColor = "";
+}
+playerButtons[3].style.backgroundColor = "lightgreen";          
     console.log(gameData);
 })
 
@@ -151,3 +168,31 @@ let question = [
         correct: 1
     }
 ]
+
+let questionAnswer = document.getElementById('question-text');
+let answerButtons = document.querySelectorAll('.answer-btn');
+let sumbitButton = document.getElementById('submit-btn');
+let currentQuestionIndex = 0;
+let score = 0;
+
+function showQuestion() {
+    const letters = ['A', 'B', 'C', 'D'];
+    let currentQ = question[currentQuestionIndex];
+    questionAnswer.textContent = currentQ.question;
+
+    for (let i = 0; i < 4; i++) {
+        answerButtons[i].textContent = letters[i] + ". " + currentQ.answers[i];
+
+        answerButtons[i].addEventListener('click', function() {
+            if (i === currentQ.correct) {
+                score = score + 10;
+            }       
+
+            sumbitButton.disabled = false;
+        });
+    }
+}
+
+showQuestion();
+   
+    
