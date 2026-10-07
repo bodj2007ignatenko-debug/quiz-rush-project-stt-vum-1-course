@@ -1,8 +1,11 @@
 let gameData = { 
     playersCount: 1,
-    topic: '',
+    topic: 'html',
     questionsCount: 3 
 };
+
+let gameQuestions = [];
+
 let playerButtons = [
     document.getElementById('btn-player1'),
     document.getElementById('btn-player2'),
@@ -72,6 +75,25 @@ questionCountSelect.addEventListener('change', function(){
 let startquizButton = document.getElementById('start-quiz-btn');
 let screen3 = document.getElementById('screen-3');
 startquizButton.addEventListener('click', function() {
+    gameQuestions = [];
+
+if (gameData.topic === 'mixed') {
+    for (let i = 0; i < question.length; i++) {
+        gameQuestions.push(question[i]);
+    }
+} else {
+    for (let i = 0; i < question.length; i++) {
+        if (question[i].category === gameData.topic) {
+            gameQuestions.push(question[i]);
+        }
+    }
+}
+let totalQuestions = gameData.playersCount * gameData.questionsCount;
+gameQuestions = gameQuestions.slice(0, totalQuestions);
+
+currentQuestionIndex = 0;
+showQuestion();
+
     screen2.style.display = 'none';
     screen3.style.display = 'block';
 });
@@ -174,25 +196,29 @@ let answerButtons = document.querySelectorAll('.answer-btn');
 let sumbitButton = document.getElementById('submit-btn');
 let currentQuestionIndex = 0;
 let score = 0;
-
+let selectedAnswerIndex = null;
 function showQuestion() {
     const letters = ['A', 'B', 'C', 'D'];
-    let currentQ = question[currentQuestionIndex];
+    let currentQ = gameQuestions[currentQuestionIndex];
     questionAnswer.textContent = currentQ.question;
+    selectedAnswerIndex = null;
+    sumbitButton.disabled = true;
 
     for (let i = 0; i < 4; i++) {
         answerButtons[i].textContent = letters[i] + ". " + currentQ.answers[i];
-
-        answerButtons[i].addEventListener('click', function() {
-            if (i === currentQ.correct) {
-                score = score + 10;
-            }       
-
-            sumbitButton.disabled = false;
-        });
-    }
+    }    
 }
-
-showQuestion();
+for (let i = 0; i < answerButtons.length; i++) {
+    answerButtons[i].addEventListener('click', function() {
+      selectedAnswerIndex = i;
+      sumbitButton.disabled = false;
    
-    
+      for (let j = 0; j < answerButtons.length; j++) {
+        answerButtons[j].style.backgroundColor = "";
+      }
+
+      answerButtons[i].style.backgroundColor = "lightblue";
+    });
+  }
+ 
+
