@@ -9,7 +9,7 @@ let selectedAnswerIndex = null;
 let playerColors = ["red", "blue", "green", "orange"]
 
 let timeSpan = document.getElementById('time-left');
-let timeLeft = 15;
+let timeLeft = 10;
 let timerInterval;
 let playerButtons = [
     document.getElementById('btn-player1'),
@@ -519,7 +519,7 @@ function showQuestion() {
 }
 for (let i = 0; i < answerButtons.length; i++) {
     answerButtons[i].addEventListener('click', function() {
-        clearInterval(timerInterval);
+        
         let currentPlayer = players[currentQuestionIndex % gameData.playersCount];
       selectedAnswerIndex = i;
       sumbitButton.disabled = false;
@@ -533,7 +533,7 @@ for (let i = 0; i < answerButtons.length; i++) {
   }
   function startTimer(){
     clearInterval(timerInterval);
-    timeLeft = 15;
+    timeLeft = 10;
 timeSpan.textContent = timeLeft;
 timerInterval = setInterval(function(){
     timeLeft--;
@@ -548,6 +548,7 @@ sumbitButton.click();
   }
 
 sumbitButton.addEventListener('click', function() {
+    clearInterval(timerInterval);
     let currentPlayerIndex = (currentQuestionIndex % gameData.playersCount);
     let currentPlayer = players[currentPlayerIndex];
 
@@ -562,13 +563,20 @@ sumbitButton.addEventListener('click', function() {
         showScore();
     }
 });
+
 function showScore(){
     clearInterval(timerInterval);
     players.sort((a, b) => b.score - a.score);
     screen3.style.display = 'none';
-    const screen4 = document.getElementById('screen-4');
+    let screen4 = document.getElementById('screen-4');
     screen4.style.display = 'block';
-console.log('game finish')
-}
-
-
+let resultsBox = document.getElementById("results-box");
+     for (let i = 0; i < players.length; i++){
+        resultsBox.innerHTML += "<p>" + (i + 1) + ". " + players[i].name + " — " + players[i].score + " pts</p>";
+     }
+    
+let restartQuiz = document.getElementById("restart-btn");
+restartQuiz.addEventListener('click', function(){
+    location.reload();
+})
+    }

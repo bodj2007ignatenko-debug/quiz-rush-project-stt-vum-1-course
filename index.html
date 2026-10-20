@@ -1,4 +1,8 @@
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Rush</title>
@@ -50,7 +54,7 @@
 
 <div id="screen-3">
     <h3 id="active-player">It's <span id="player-name">Player 1</span>'s turn</h3> 
-    <p id="timer"> Time left: <span id="time-left">15</span>s</p>
+    <p id="timer"> Time left: <span id="time-left">10</span>s</p>
     <h2 id="question-text">What is the capital of France?</h2>
     <div id="answer-container">
         <button class="answer-btn">A. Berlin</button>
@@ -63,21 +67,11 @@
 
 <div id="screen-4">
     <h2>Quiz Results</h2>
-    <table id="results-table">
-        <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Score</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Player 1</td>
-            <td>10</td>
-        </tr>
-    </table>
+    <div id="results-box"></div>
+      
     <button id="restart-btn">Restart Quiz</button>
 </div>
 <script src="script.js"></script>
 </body>
-<!-- Подключаем скрипт -->
+
  
